@@ -1,0 +1,6 @@
+/* Retire the old generic date/time booking controls. */
+#booking .booking-layout,
+#booking-flow {
+  display: none !important;
+}
+
