@@ -6,8 +6,10 @@
   // Replace old navigation nodes to remove role-demo event handlers entirely.
   $$('.nav-item').forEach(old=>{const b=old.cloneNode(true);old.replaceWith(b)});
   const nav=$$('.nav-item');
-  nav.find(b=>b.dataset.view==='engineer').dataset.view='booking'; nav.find(b=>b.dataset.view==='engineer').innerHTML='<span>＋</span> احجز تقييمًا';
-  nav.find(b=>b.dataset.view==='profile').dataset.view='track'; nav.find(b=>b.dataset.view==='profile').innerHTML='<span>⌕</span> تتبّع النتيجة';
+  const bookingNav=nav.find(b=>b.dataset.view==='engineer');
+  const trackNav=nav.find(b=>b.dataset.view==='profile');
+  bookingNav.dataset.view='booking'; bookingNav.innerHTML='<span>＋</span> احجز تقييمًا';
+  trackNav.dataset.view='track'; trackNav.innerHTML='<span>⌕</span> تتبّع النتيجة';
   nav.find(b=>b.dataset.view==='expert').style.display='none'; nav.find(b=>b.dataset.view==='admin').style.display='none';
   $$('.nav-item').forEach(b=>b.onclick=()=>navigate(b.dataset.view));
   $('.account').style.display='none'; const login=[...$('.topbar').querySelectorAll('button')].find(b=>b.textContent.includes('تسجيل')); if(login)login.style.display='none';
