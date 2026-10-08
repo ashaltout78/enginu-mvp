@@ -1,7 +1,10 @@
 /* Arabic layout corrections and small-screen safeguards */
 .sidebar { inset: 0 0 0 auto; }
+html, body { overflow-x: hidden; }
+main, .hero-copy, .hero-panel { min-width: 0; }
 
 @media (max-width: 850px) {
+  .hero-panel { margin-right: 0; }
   .skill-line { grid-template-columns: 105px minmax(0, 1fr) 20px; }
   .actions, .trust { flex-wrap: wrap; }
   .topbar { gap: 10px; }
@@ -20,3 +23,4 @@
   .actions > * { width: 100%; }
   .trust { gap: 8px; line-height: 1.8; }
 }
+
