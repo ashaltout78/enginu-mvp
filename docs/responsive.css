@@ -1,0 +1,22 @@
+/* Arabic layout corrections and small-screen safeguards */
+.sidebar { inset: 0 0 0 auto; }
+
+@media (max-width: 850px) {
+  .skill-line { grid-template-columns: 105px minmax(0, 1fr) 20px; }
+  .actions, .trust { flex-wrap: wrap; }
+  .topbar { gap: 10px; }
+  .status-dot { font-size: 10px; }
+  .panel { overflow-x: auto; }
+  table { min-width: 520px; }
+}
+
+@media (max-width: 420px) {
+  .hero { padding-inline: 6%; }
+  h1 { font-size: 31px; }
+  .hero-panel { margin-right: 0; }
+  .score-card { padding: 20px; }
+  .expert-note { position: relative; inset: auto; margin-top: 14px; }
+  .page-head { flex-wrap: wrap; }
+  .actions > * { width: 100%; }
+  .trust { gap: 8px; line-height: 1.8; }
+}
